@@ -17,11 +17,9 @@ function cardCompra(event){
 
     const valorEmail = inputEmail.value;
 
-    const valorQEntradas = inputCantEntradas.value;
+    const valorQEntradas = parseInt(inputCantEntradas.value);
 
-    crearEntrada(valorNombre, valorEmail, valorQEntradas)
-
-    precioTotal(valorQEntradas, 2990)
+    crearEntrada(valorNombre, valorEmail, valorQEntradas);
 }
 
 //Esta es la función que muestra los detalles de la compra
@@ -29,9 +27,10 @@ function crearEntrada(valorNombre, valorEmail, valorQEntradas){
     const cardEntrada = document.createElement('div');
 
     cardEntrada.className ="card-entrada";
-    cardEntrada.innerHTML = `<h3>Nombre: ${valorNombre}</h2>
+    cardEntrada.innerHTML = `<h3>Nombre: ${valorNombre}</h3>
     <h3>email: ${valorEmail} </h3>
     <h3>Cantidad de Entradas :${valorQEntradas}</h3>`;
+
     
     divCard.appendChild(cardEntrada)
 }
